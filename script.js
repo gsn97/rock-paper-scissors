@@ -12,8 +12,8 @@ let cpuScore = 0;
 //     - Print userChoice to the console with the message "You have chosen x"
 function getUserChoice () {
     userChoice = prompt("What'll it be? Rock, Paper, or Scissors?");
+    console.log("You have chosen " + userChoice + "!");
     return userChoice;
-    console.log("You have chosen " + userChoice + "!");;
 }
 // 6. Create Function for Computer Choice by using a randomizer to generate Rock, Paper, or Scissors (getCpuChoice)
 //     - Plug that into variable cpuChoice
@@ -27,9 +27,11 @@ function getCpuChoice () {
         } else {
             cpuChoice = "Scissors"
         }
-        return cpuChoice;
     console.log("The computer has chosen " + cpuChoice + ("."));
+    return cpuChoice;
 }
+getUserChoice();
+getCpuChoice();
 // 7. Create a Function called playRound (with two parameters: userChoice and cpuChoice) (it should encompass the following)
 //      - It should call getUserChoice and then getCpuChoice
 //         - If userChoice === cpuChoice, then print to console "It's a tie!"
