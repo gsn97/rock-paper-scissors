@@ -1,8 +1,12 @@
 // Pseudocode Algorithm:
 // 1. Create string Variable for user Input (userChoice)
+let userChoice;
 // 2. Create string Variable for Computer Choice (cpuChoice)
+let cpuChoice;
 // 3. Create integer Variable for User Score (userScore), default value should be 0
+let userScore = 0;
 // 4. Create integer Variable for Computer Score (cpuScore), default value should be 0
+let cpuScore = 0;
 // 5. Create Function that prompts the user for a choice (Rock, Paper, or Scissors) (getUserChoice) (make sure it's case insensitive)
 //     - Plug that result into variable userChoice
 //     - Print userChoice to the console with the message "You have chosen x"
