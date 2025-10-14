@@ -11,7 +11,8 @@ let cpuScore = 0;
 //     - Plug that result into variable userChoice
 //     - Print userChoice to the console with the message "You have chosen x"
 function getUserChoice () {
-    userChoice = prompt("What'll it be? Rock, Paper, or Scissors?");
+    let userEntry = prompt("What'll it be? Rock, Paper, or Scissors?");
+    userChoice = (userEntry.at(0).toUpperCase()) + (userEntry.slice(1).toLowerCase());
     console.log("You have chosen " + userChoice + "!");
     return userChoice;
 }
