@@ -32,9 +32,12 @@ function getCpuChoice () {
     console.log("The computer has chosen " + cpuChoice + ("!"));
     return cpuChoice;
 }
-getUserChoice();
-getCpuChoice();
 // 7. Create a Function called playRound (with two parameters: userChoice and cpuChoice) (it should encompass the following)
+function playRound() {
+    getUserChoice();
+    getCpuChoice();
+}
+playRound();
 //      - It should call getUserChoice and then getCpuChoice
 //         - If userChoice === cpuChoice, then print to console "It's a tie!"
 //             - Print a score message
