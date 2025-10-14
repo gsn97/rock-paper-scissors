@@ -13,7 +13,7 @@ let cpuScore = 0;
 function getUserChoice () {
     userChoice = prompt("What'll it be? Rock, Paper, or Scissors?");
     return userChoice;
-    console.log("You have chosen " + userChoice + "!");;
+    console.log("You have chosen " + userChoice + "!");
 }
 // 6. Create Function for Computer Choice by using a randomizer to generate Rock, Paper, or Scissors (getCpuChoice)
 //     - Plug that into variable cpuChoice
