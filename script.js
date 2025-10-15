@@ -33,36 +33,86 @@ function getCpuChoice () {
     return cpuChoice;
 }
 // 7. Create a Function called playRound (with two parameters: userChoice and cpuChoice) (it should encompass the following)
-function playRound() {
+function playRound(userScore, cpuScore) {
+//      - It should call getUserChoice and then getCpuChoice
     getUserChoice();
     getCpuChoice();
+// - If userChoice === cpuChoice, then print to console "It's a tie!"
+//     - Print a score message
+    if (userChoice === cpuChoice) {
+        console.log("It's a tie!");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
+// - If userChoice is Rock and cpuChoice is Scissors:
+//     - Add 1 to userScore and return it
+//     - Print to console "You win! Rock crushes Scissors!"
+//     - Print a score message
+    } else if (userChoice === "Rock" && cpuChoice === "Scissors") {
+        userScore = userScore + 1;
+        console.log("You win! Rock crushes Scissors!");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
+        return userScore;
+// - If userChoice is Rock and cpuChoice is Paper:
+//     - Add 1 to cpuScore and return it
+//     - Print to console "You lose! Paper covers Rock!"
+//     - Print a score message
+    } else if (userChoice === "Rock" && cpuChoice === "Paper") {
+        cpuScore = cpuScore + 1;
+        console.log("You lose! Paper covers Rock!");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
+        return cpuScore;
+// - If userChoice is Paper and cpuChoice is Rock:
+//     - Add 1 to userScore and return it
+//     - Print to console "You win! Paper Covers Rock!"
+//     - Print a score message
+    } else if (userChoice === "Paper" && cpuChoice === "Rock") {
+        userScore = userScore + 1;
+        console.log("You win! Paper Covers Rock!");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
+        return userScore;
+// - If userChoice is Paper and cpuChoice is Scissors:
+//     - Add 1 to cpuScore and return it
+//     - Print to console "You lose! Scissors cuts Paper!"
+//     - Print a score message
+    } else if (userChoice === "Paper" && cpuChoice === "Scissors") {
+        cpuScore = cpuScore + 1;
+        console.log("You lose! Scissors cuts Paper!");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
+        return cpuScore;
+// - If userChoice is Scissors and cpuChoice is Paper:
+//     - Add 1 to userScore and return it
+//     - Print to console "You win! Scissors cuts Paper!"
+//     - Print a score message
+    } else if (userChoice === "Scissors" && cpuChoice === "Paper") {
+        userScore = userScore + 1;
+        console.log("You win! Scissors cuts Paper!");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
+        return userScore;
+// - If userChoice is Scissors and cpuChoice is Rock:
+//     - Add 1 to cpuScore and return it
+//     - Print to console "You lose! Rock crushes Scissors!"
+//     - Print a score message
+    } else if (userChoice === "Scissors" && cpuChoice === "Rock") {
+        cpuScore = cpuScore + 1;
+        console.log("You lose! Rock crushes Scissors!");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
+        return cpuScore;
+// Else return error message
+    } else {
+        console.log("Hmm...something went wrong.")
+    }
 }
-playRound();
-//      - It should call getUserChoice and then getCpuChoice
-//         - If userChoice === cpuChoice, then print to console "It's a tie!"
-//             - Print a score message
-//         - If userChoice is Rock and cpuChoice is Scissors:
-//             - Add 1 to userScore and return it
-//             - Print to console "You win! Rock crushes Scissors!"
-//             - Print a score message
-//         - If userChoice is Rock and cpuChoice is Paper:
-//             - Add 1 to cpuScore and return it
-//             - Print to console "You lose! Paper covers Rock!"
-//             - Print a score message
-//         - If userChoice is Paper and cpuChoice is Rock:
-//             - Add 1 to userScore and return it
-//             - Print to console "You win! Paper Covers Rock!"
-//             - Print a score message
-//         - If userChoice is Paper and cpuChoice is Scissors:
-//             - Add 1 to cpuScore and return it
-//             - Print to console "You lose! Scissors cuts Paper!"
-//             - Print a score message
-//         - If userChoice is Scissors and cpuChoice is Paper:
-//             - Add 1 to userScore and return it
-//             - Print to console "You win! Scissors cuts Paper!"
-//             - Print a score message
-//         - If userChoice is Scissors and cpuChoice is Rock:
-//             - Add 1 to cpuScore and return it
-//             - Print to console "You lose! Rock crushes Scissors!"
-//             - Print a score message
 // 8. Create a function called playGame that calls playRound 5 times, and then displays a final score with the winner
