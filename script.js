@@ -12,9 +12,13 @@ let cpuScore = 0;
 //     - Print userChoice to the console with the message "You have chosen x"
 function getUserChoice () {
     let userEntry = prompt("What'll it be? Rock, Paper, or Scissors?");
-    userChoice = (userEntry.at(0).toUpperCase()) + (userEntry.slice(1).toLowerCase());
-    console.log("       You have chosen " + userChoice + "!");
-    return userChoice;
+    if (userEntry) {
+        userChoice = (userEntry.at(0).toUpperCase()) + (userEntry.slice(1).toLowerCase());
+        console.log("       You have chosen " + userChoice + "!");
+        return userChoice;
+    } else {
+        console.log("       How about you try typing something next time :)")
+    }
 }
 // 6. Create Function for Computer Choice by using a randomizer to generate Rock, Paper, or Scissors (getCpuChoice)
 //     - Plug that into variable cpuChoice
@@ -98,7 +102,7 @@ function playRound() {
         return cpuScore;
 // - Else return error message
     } else {
-        console.log("   Hmm...something went wrong.");
+        console.log("   Who taught you how to type? Helen Keller?");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
     }
 }
