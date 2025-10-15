@@ -13,7 +13,7 @@ let cpuScore = 0;
 function getUserChoice () {
     let userEntry = prompt("What'll it be? Rock, Paper, or Scissors?");
     userChoice = (userEntry.at(0).toUpperCase()) + (userEntry.slice(1).toLowerCase());
-    console.log("           You have chosen " + userChoice + "!");
+    console.log("       You have chosen " + userChoice + "!");
     return userChoice;
 }
 // 6. Create Function for Computer Choice by using a randomizer to generate Rock, Paper, or Scissors (getCpuChoice)
@@ -29,7 +29,7 @@ function getCpuChoice () {
         } else {
             cpuChoice = "Scissors"
         }
-    console.log("           The computer has chosen " + cpuChoice + ("!"));
+    console.log("       The computer has chosen " + cpuChoice + ("!"));
     return cpuChoice;
 }
 // 7. Create a Function called playRound (with two parameters: userChoice and cpuChoice) (it should encompass the following)
@@ -48,7 +48,7 @@ function playRound() {
 //     - Print a score message
     } else if (userChoice === "Rock" && cpuChoice === "Scissors") {
         userScore = (userScore + 1);
-        console.log("       You win! Rock crushes Scissors!");
+        console.log("   You win! Rock crushes Scissors!");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return userScore;
 // - If userChoice is Rock and cpuChoice is Paper:
@@ -57,7 +57,7 @@ function playRound() {
 //     - Print a score message
     } else if (userChoice === "Rock" && cpuChoice === "Paper") {
         cpuScore = (cpuScore + 1);
-        console.log("       You lose! Paper covers Rock!");
+        console.log("   You lose! Paper covers Rock!");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return cpuScore;
 // - If userChoice is Paper and cpuChoice is Rock:
@@ -66,7 +66,7 @@ function playRound() {
 //     - Print a score message
     } else if (userChoice === "Paper" && cpuChoice === "Rock") {
         userScore = (userScore + 1);
-        console.log("       You win! Paper Covers Rock!");
+        console.log("   You win! Paper Covers Rock!");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return userScore;
 // - If userChoice is Paper and cpuChoice is Scissors:
@@ -75,7 +75,7 @@ function playRound() {
 //     - Print a score message
     } else if (userChoice === "Paper" && cpuChoice === "Scissors") {
         cpuScore = (cpuScore + 1);
-        console.log("       You lose! Scissors cuts Paper!");
+        console.log("   You lose! Scissors cuts Paper!");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return cpuScore;
 // - If userChoice is Scissors and cpuChoice is Paper:
@@ -84,7 +84,7 @@ function playRound() {
 //     - Print a score message
     } else if (userChoice === "Scissors" && cpuChoice === "Paper") {
         userScore = (userScore + 1);
-        console.log("       You win! Scissors cuts Paper!");
+        console.log("   You win! Scissors cuts Paper!");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return userScore;
 // - If userChoice is Scissors and cpuChoice is Rock:
@@ -93,12 +93,12 @@ function playRound() {
 //     - Print a score message
     } else if (userChoice === "Scissors" && cpuChoice === "Rock") {
         cpuScore = (cpuScore + 1);
-        console.log("       You lose! Rock crushes Scissors!");
+        console.log("   You lose! Rock crushes Scissors!");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return cpuScore;
 // Else return error message
     } else {
-        console.log("       Hmm...something went wrong.");
+        console.log("   Hmm...something went wrong.");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
     }
 }
