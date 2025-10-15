@@ -96,7 +96,7 @@ function playRound() {
         console.log("   You lose! Rock crushes Scissors!");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return cpuScore;
-// Else return error message
+// - Else return error message
     } else {
         console.log("   Hmm...something went wrong.");
         console.log("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
@@ -126,4 +126,5 @@ function playGame() {
         console.log("Something terrible has happened!")
     }
 }
+// 9. Run playGame
 playGame();
