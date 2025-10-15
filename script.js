@@ -41,8 +41,7 @@ function playRound() {
 //     - Print a score message
     if (userChoice === cpuChoice) {
         console.log("It's a tie!");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
 // - If userChoice is Rock and cpuChoice is Scissors:
 //     - Add 1 to userScore and return it
 //     - Print to console "You win! Rock crushes Scissors!"
@@ -50,8 +49,7 @@ function playRound() {
     } else if (userChoice === "Rock" && cpuChoice === "Scissors") {
         userScore = (userScore + 1);
         console.log("You win! Rock crushes Scissors!");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return userScore;
 // - If userChoice is Rock and cpuChoice is Paper:
 //     - Add 1 to cpuScore and return it
@@ -60,8 +58,7 @@ function playRound() {
     } else if (userChoice === "Rock" && cpuChoice === "Paper") {
         cpuScore = (cpuScore + 1);
         console.log("You lose! Paper covers Rock!");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return cpuScore;
 // - If userChoice is Paper and cpuChoice is Rock:
 //     - Add 1 to userScore and return it
@@ -70,8 +67,7 @@ function playRound() {
     } else if (userChoice === "Paper" && cpuChoice === "Rock") {
         userScore = (userScore + 1);
         console.log("You win! Paper Covers Rock!");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return userScore;
 // - If userChoice is Paper and cpuChoice is Scissors:
 //     - Add 1 to cpuScore and return it
@@ -80,8 +76,7 @@ function playRound() {
     } else if (userChoice === "Paper" && cpuChoice === "Scissors") {
         cpuScore = (cpuScore + 1);
         console.log("You lose! Scissors cuts Paper!");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return cpuScore;
 // - If userChoice is Scissors and cpuChoice is Paper:
 //     - Add 1 to userScore and return it
@@ -90,8 +85,7 @@ function playRound() {
     } else if (userChoice === "Scissors" && cpuChoice === "Paper") {
         userScore = (userScore + 1);
         console.log("You win! Scissors cuts Paper!");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return userScore;
 // - If userChoice is Scissors and cpuChoice is Rock:
 //     - Add 1 to cpuScore and return it
@@ -100,18 +94,16 @@ function playRound() {
     } else if (userChoice === "Scissors" && cpuChoice === "Rock") {
         cpuScore = (cpuScore + 1);
         console.log("You lose! Rock crushes Scissors!");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
         return cpuScore;
 // Else return error message
     } else {
         console.log("Hmm...something went wrong.");
-        console.log("The score is currently:");
-        console.log("You: " + userScore + " || " + "Computer: " + cpuScore);
+        console.log("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
     }
 }
 // 8. Create a function called playGame that calls playRound 5 times, and then displays a final score with the winner
-function playGame(userScore, cpuScore) {
+function playGame() {
     alert("Welcome to Rock, Paper, Scissors! By gsn97 - October 2025. This game will last 5 rounds!");
     console.log("Round 1:")
     playRound();
@@ -123,12 +115,15 @@ function playGame(userScore, cpuScore) {
     playRound();
     console.log("FINAL ROUND! - Round 5:")
     playRound();
+    console.log("Final Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
     if (userScore > cpuScore) {
         console.log("CONGRATULATIONS YOU WIN!")
     } else if (userScore < cpuScore) {
         console.log("BOO YOU STINK AND YOU SHOULD FEEL BAD!");
-    } else {
+    } else if (userScore === cpuScore) {
         console.log("Final score is a tie. Boooring, you should refresh and keep trying!")
+    } else {
+        console.log("Something terrible has happened!")
     }
 }
 playGame();
