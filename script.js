@@ -108,7 +108,7 @@ function playRound() {
 }
 // 8. Create a function called playGame that calls playRound 5 times, and then displays a final score with the winner
 function playGame() {
-    alert("Welcome to Rock, Paper, Scissors! By gsn97 - October 2025. This game will last 5 rounds!");
+    alert("Welcome to Rock, Paper, Scissors! By gsn97 - October 2025. This game will last 5 rounds! Tip: Refresh if it's the first time opening the page.");
     console.log("Round 1:")
     playRound();
     console.log("Round 2:")
