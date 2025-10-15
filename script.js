@@ -21,7 +21,7 @@ function getUserChoice () {
 //     - Print cpuChoice to the console with the message "Computer chooses y"
 function getCpuChoice () {
     const randomChoice = Math.random();
-    console.log(randomChoice + ' is the # the randomizer generated (less than 1/3 = rock; between 1/3 and 2/3 = paper; more than 2/3 = scissors');
+    // console.log(randomChoice + ' is the # the randomizer generated (less than 1/3 = rock; between 1/3 and 2/3 = paper; more than 2/3 = scissors');
         if (randomChoice < (1/3)) {
             cpuChoice = "Rock"
         } else if (randomChoice < (2/3)) {
@@ -33,7 +33,7 @@ function getCpuChoice () {
     return cpuChoice;
 }
 // 7. Create a Function called playRound (with two parameters: userChoice and cpuChoice) (it should encompass the following)
-function playRound(userScore, cpuScore) {
+function playRound() {
 //      - It should call getUserChoice and then getCpuChoice
     getUserChoice();
     getCpuChoice();
@@ -49,7 +49,7 @@ function playRound(userScore, cpuScore) {
 //     - Print to console "You win! Rock crushes Scissors!"
 //     - Print a score message
     } else if (userChoice === "Rock" && cpuChoice === "Scissors") {
-        userScore = userScore + 1;
+        userScore = (userScore + 1);
         console.log("You win! Rock crushes Scissors!");
         console.log("The score is currently:");
         console.log("You: " + userScore);
@@ -60,7 +60,7 @@ function playRound(userScore, cpuScore) {
 //     - Print to console "You lose! Paper covers Rock!"
 //     - Print a score message
     } else if (userChoice === "Rock" && cpuChoice === "Paper") {
-        cpuScore = cpuScore + 1;
+        cpuScore = (cpuScore + 1);
         console.log("You lose! Paper covers Rock!");
         console.log("The score is currently:");
         console.log("You: " + userScore);
@@ -71,7 +71,7 @@ function playRound(userScore, cpuScore) {
 //     - Print to console "You win! Paper Covers Rock!"
 //     - Print a score message
     } else if (userChoice === "Paper" && cpuChoice === "Rock") {
-        userScore = userScore + 1;
+        userScore = (userScore + 1);
         console.log("You win! Paper Covers Rock!");
         console.log("The score is currently:");
         console.log("You: " + userScore);
@@ -82,7 +82,7 @@ function playRound(userScore, cpuScore) {
 //     - Print to console "You lose! Scissors cuts Paper!"
 //     - Print a score message
     } else if (userChoice === "Paper" && cpuChoice === "Scissors") {
-        cpuScore = cpuScore + 1;
+        cpuScore = (cpuScore + 1);
         console.log("You lose! Scissors cuts Paper!");
         console.log("The score is currently:");
         console.log("You: " + userScore);
@@ -93,7 +93,7 @@ function playRound(userScore, cpuScore) {
 //     - Print to console "You win! Scissors cuts Paper!"
 //     - Print a score message
     } else if (userChoice === "Scissors" && cpuChoice === "Paper") {
-        userScore = userScore + 1;
+        userScore = (userScore + 1);
         console.log("You win! Scissors cuts Paper!");
         console.log("The score is currently:");
         console.log("You: " + userScore);
@@ -104,7 +104,7 @@ function playRound(userScore, cpuScore) {
 //     - Print to console "You lose! Rock crushes Scissors!"
 //     - Print a score message
     } else if (userChoice === "Scissors" && cpuChoice === "Rock") {
-        cpuScore = cpuScore + 1;
+        cpuScore = (cpuScore + 1);
         console.log("You lose! Rock crushes Scissors!");
         console.log("The score is currently:");
         console.log("You: " + userScore);
@@ -121,10 +121,15 @@ function playRound(userScore, cpuScore) {
 // 8. Create a function called playGame that calls playRound 5 times, and then displays a final score with the winner
 function playGame(userScore, cpuScore) {
     alert("Welcome to Rock, Paper, Scissors! By gsn97 - October 2025. This game will last 5 rounds!");
+    console.log("Round 1:")
     playRound();
+    console.log("Round 2:")
     playRound();
+    console.log("Round 3:")
     playRound();
+    console.log("Round 4:")
     playRound();
+    console.log("FINAL ROUND! - Round 5:")
     playRound();
     if (userScore > cpuScore) {
         console.log("CONGRATULATIONS YOU WIN!")
