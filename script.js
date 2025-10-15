@@ -112,7 +112,24 @@ function playRound(userScore, cpuScore) {
         return cpuScore;
 // Else return error message
     } else {
-        console.log("Hmm...something went wrong.")
+        console.log("Hmm...something went wrong.");
+        console.log("The score is currently:");
+        console.log("You: " + userScore);
+        console.log("Computer: " + cpuScore);
     }
 }
 // 8. Create a function called playGame that calls playRound 5 times, and then displays a final score with the winner
+function playGame(userScore, cpuScore) {
+    alert("Welcome to Rock, Paper, Scissors! By gsn97 - October 2025. This game will last 5 rounds!");
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    if (userScore > cpuScore) {
+        console.log("CONGRATULATIONS YOU WIN!")
+    } else {
+        console.log("BOO YOU STINK AND YOU SHOULD FEEL BAD!");
+    }
+}
+playGame();
