@@ -27,11 +27,11 @@ function getCpuChoice () {
     const randomChoice = Math.random();
     // console.log(randomChoice + ' is the # the randomizer generated (less than 1/3 = rock; between 1/3 and 2/3 = paper; more than 2/3 = scissors');
         if (randomChoice < (1/3)) {
-            cpuChoice = "Rock"
+            cpuChoice = "Rock";
         } else if (randomChoice < (2/3)) {
-            cpuChoice = "Paper"
+            cpuChoice = "Paper";
         } else {
-            cpuChoice = "Scissors"
+            cpuChoice = "Scissors";
         }
     console.log("       The computer has chosen " + cpuChoice + ("!"));
     return cpuChoice;
