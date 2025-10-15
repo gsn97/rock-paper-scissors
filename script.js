@@ -133,8 +133,10 @@ function playGame(userScore, cpuScore) {
     playRound();
     if (userScore > cpuScore) {
         console.log("CONGRATULATIONS YOU WIN!")
-    } else {
+    } else if (userScore < cpuScore) {
         console.log("BOO YOU STINK AND YOU SHOULD FEEL BAD!");
+    } else {
+        console.log("Final score is a tie. Boooring, you should refresh and keep trying!")
     }
 }
 playGame();
