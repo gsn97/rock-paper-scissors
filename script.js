@@ -1,175 +1,123 @@
-// Pseudocode Algorithm:
-// 1. Create string Variable for user Input (userChoice)
 let userChoice;
-// 2. Create string Variable for Computer Choice (cpuChoice)
 let cpuChoice;
-// 3. Create integer Variable for User Score (userScore), default value should be 0
 let userScore = 0;
-// 4. Create integer Variable for Computer Score (cpuScore), default value should be 0
 let cpuScore = 0;
-// 5. Create Function that prompts the user for a choice (Rock, Paper, or Scissors) (getUserChoice) (make sure it's case insensitive)
-//     - Plug that result into variable userChoice
-//     - Print userChoice to the console with the message "You have chosen x"
+let currentRound = 0;
+
+const round = document.querySelector("#round");
 
 const results = document.querySelector("#results");
 
-function getUserChoice () {
-    let userEntry = prompt("What'll it be? Rock, Paper, or Scissors?");
-    if (userEntry) {
-        userChoice = (userEntry.at(0).toUpperCase()) + (userEntry.slice(1).toLowerCase());
-        console.log("       You have chosen " + userChoice + "!");
-        return userChoice;
-    } else {
-        console.log("       How about you try typing something next time :)")
-    }
-}
-// 6. Create Function for Computer Choice by using a randomizer to generate Rock, Paper, or Scissors (getCpuChoice)
-//     - Plug that into variable cpuChoice
-//     - Print cpuChoice to the console with the message "Computer chooses y"
-function getCpuChoice () {
-    const randomChoice = Math.random();
-    // console.log(randomChoice + ' is the # the randomizer generated (less than 1/3 = rock; between 1/3 and 2/3 = paper; more than 2/3 = scissors');
-        if (randomChoice < (1/3)) {
-            cpuChoice = "Rock";
-        } else if (randomChoice < (2/3)) {
-            cpuChoice = "Paper";
-        } else {
-            cpuChoice = "Scissors";
-        }
-    const cpuChoicePara = document.createElement("p");
-    cpuChoicePara.textContent = ("       The computer has chosen " + cpuChoice + ("!"));
-    results.appendChild(cpuChoicePara);
-    return cpuChoice;
-}
-// 7. Create a Function called playRound (with two parameters: userChoice and cpuChoice) (it should encompass the following)
-function playRound() {
-//      - It should call getUserChoice and then getCpuChoice
-    // getUserChoice();
-    getCpuChoice();
-    
-    const roundResult = document.createElement("p");
-    const scoreText = document.createElement("p");
-    
-// - If userChoice === cpuChoice, then print to console "It's a tie!"
-//     - Print a score message
-    if (userChoice === cpuChoice) {
-        roundResult.textContent = "       It's a tie!";
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-// - If userChoice is Rock and cpuChoice is Scissors:
-//     - Add 1 to userScore and return it
-//     - Print to console "You win! Rock crushes Scissors!"
-//     - Print a score message
-    } else if (userChoice === "Rock" && cpuChoice === "Scissors") {
-        userScore = (userScore + 1);
-        roundResult.textContent =  "   You win! Rock crushes Scissors!";
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        return userScore;
-// - If userChoice is Rock and cpuChoice is Paper:
-//     - Add 1 to cpuScore and return it
-//     - Print to console "You lose! Paper covers Rock!"
-//     - Print a score message
-    } else if (userChoice === "Rock" && cpuChoice === "Paper") {
-        cpuScore = (cpuScore + 1);
-        roundResult.textContent = "   You lose! Paper covers Rock!";
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        return cpuScore;
-// - If userChoice is Paper and cpuChoice is Rock:
-//     - Add 1 to userScore and return it
-//     - Print to console "You win! Paper Covers Rock!"
-//     - Print a score message
-    } else if (userChoice === "Paper" && cpuChoice === "Rock") {
-        userScore = (userScore + 1);
-        roundResult.textContent = "   You win! Paper Covers Rock!";
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        return userScore;
-// - If userChoice is Paper and cpuChoice is Scissors:
-//     - Add 1 to cpuScore and return it
-//     - Print to console "You lose! Scissors cuts Paper!"
-//     - Print a score message
-    } else if (userChoice === "Paper" && cpuChoice === "Scissors") {
-        cpuScore = (cpuScore + 1);
-        roundResult.textContent = "   You lose! Scissors cuts Paper!";
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        return cpuScore;
-// - If userChoice is Scissors and cpuChoice is Paper:
-//     - Add 1 to userScore and return it
-//     - Print to console "You win! Scissors cuts Paper!"
-//     - Print a score message
-    } else if (userChoice === "Scissors" && cpuChoice === "Paper") {
-        userScore = (userScore + 1);
-        roundResult.textContent = "   You win! Scissors cuts Paper!";
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        return userScore;
-// - If userChoice is Scissors and cpuChoice is Rock:
-//     - Add 1 to cpuScore and return it
-//     - Print to console "You lose! Rock crushes Scissors!"
-//     - Print a score message
-    } else if (userChoice === "Scissors" && cpuChoice === "Rock") {
-        cpuScore = (cpuScore + 1);
-        roundResult.textContent = "   You lose! Rock crushes Scissors!";
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        return cpuScore;
-// - Else return error message
-    } else {
-        console.log("   Who taught you how to type? Helen Keller?");
-        scoreText.textContent = ("   Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-    }
-    results.appendChild(roundResult);
-    results.appendChild(scoreText);
+const userChoicePara = document.createElement("p");
+const cpuChoicePara = document.createElement("p");
+const roundResult = document.createElement("span");
+const scoreText = document.createElement("h4");
 
-}
-// 8. Create a function called playGame that calls playRound 5 times, and then displays a final score with the winner
-function playGame() {
-    alert("Welcome to Rock, Paper, Scissors! By gsn97 - October 2025. This game will last 5 rounds! Tip: Refresh if it's the first time opening the page.");
-    console.log("Round 1:")
-    playRound();
-    console.log("Round 2:")
-    playRound();
-    console.log("Round 3:")
-    playRound();
-    console.log("Round 4:")
-    playRound();
-    console.log("FINAL ROUND! - Round 5:")
-    playRound();
-    console.log("Final Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-    if (userScore > cpuScore) {
-        console.log("CONGRATULATIONS YOU WIN!")
-    } else if (userScore < cpuScore) {
-        console.log("BOO YOU STINK AND YOU SHOULD FEEL BAD!");
-    } else if (userScore === cpuScore) {
-        console.log("Final score is a tie. Boooring, you should refresh and keep trying!")
-    } else {
-        console.log("Something terrible has happened!")
-    }
-}
-// 9. Run playGame
-// playGame();
-
-// UI additions below
 
 const btnRock = document.querySelector("#btnRock");
 const btnPaper = document.querySelector("#btnPaper");
 const btnScissors = document.querySelector("#btnScissors");
 
-const userChoicePara = document.createElement("p");
 
-btnRock.addEventListener("click", (e) => {
+function buttonPress(e) {
     userChoice = e.target.textContent;
-    userChoicePara.textContent = ("       You have chosen " + userChoice + "!");
-    results.appendChild(userChoicePara);
+    userChoicePara.textContent = ("You have chosen " + userChoice + "!");
     playRound();
-})
+    firstToFive();
+}
 
-btnPaper.addEventListener("click", (e) => {
-    userChoice = e.target.textContent;
-    userChoicePara.textContent = ("       You have chosen " + userChoice + "!");
-    results.appendChild(userChoicePara);
-    playRound();
-})
+btnRock.addEventListener("click", buttonPress);
+btnPaper.addEventListener("click", buttonPress);
+btnScissors.addEventListener("click", buttonPress);
 
-btnScissors.addEventListener("click", (e) => {
-    userChoice = e.target.textContent;
-    userChoicePara.textContent = ("       You have chosen " + userChoice + "!");
+function getCpuChoice () {
+    const randomChoice = Math.random();
+    if (randomChoice < (1/3)) {
+        cpuChoice = "Rock";
+    } else if (randomChoice < (2/3)) {
+        cpuChoice = "Paper";
+    } else {
+        cpuChoice = "Scissors";
+    }
+    cpuChoicePara.textContent = ("The computer has chosen " + cpuChoice + ("!"));
+    return cpuChoice;
+}
+
+function playRound() {
+    currentRound++;
+    round.textContent = ("Round: " + currentRound);
+    getCpuChoice();
+    if (userChoice === cpuChoice) {
+        roundResult.textContent = "It's a tie!";
+        roundResult.style.backgroundColor = "yellow";
+        roundResult.style.color = "black";
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    } else if (userChoice === "Rock" && cpuChoice === "Scissors") {
+        userScore++;;
+        roundResult.textContent =  "You win! Rock crushes Scissors!";
+        roundResult.style.backgroundColor = "green";
+        roundResult.style.color = "white";
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    } else if (userChoice === "Rock" && cpuChoice === "Paper") {
+        cpuScore++;
+        roundResult.textContent = "You lose! Paper covers Rock!";
+        roundResult.style.backgroundColor = "red";
+        roundResult.style.color = "white";
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    } else if (userChoice === "Paper" && cpuChoice === "Rock") {
+        userScore++;;
+        roundResult.textContent = "You win! Paper Covers Rock!";
+        roundResult.style.backgroundColor = "green";
+        roundResult.style.color = "white";
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    } else if (userChoice === "Paper" && cpuChoice === "Scissors") {
+        cpuScore++;
+        roundResult.textContent = "You lose! Scissors cuts Paper!";
+        roundResult.style.backgroundColor = "red";
+        roundResult.style.color = "white";
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    } else if (userChoice === "Scissors" && cpuChoice === "Paper") {
+        userScore++;;
+        roundResult.textContent = "You win! Scissors cuts Paper!";
+        roundResult.style.backgroundColor = "green";
+        roundResult.style.color = "white";
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    } else if (userChoice === "Scissors" && cpuChoice === "Rock") {
+        cpuScore++;
+        roundResult.textContent = "You lose! Rock crushes Scissors!";
+        roundResult.style.backgroundColor = "red";
+        roundResult.style.color = "white";
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    } else {
+        console.log("   Who taught you how to type? Helen Keller?");
+        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
+    }
     results.appendChild(userChoicePara);
-    playRound();
-})
+    results.appendChild(cpuChoicePara);
+    results.appendChild(roundResult);
+    results.appendChild(scoreText);
+}
+function firstToFive() {    
+    if (userScore === 5 || cpuScore === 5) {
+        const finalScore = document.createElement("p");
+        finalScore.style.fontWeight = "bold";
+        finalScore.style.fontStyle = "italic";
+        finalScore.style.fontSize = "20px";
+        if (userScore < cpuScore) {
+            finalScore.textContent = "You suck, computer wins!";
+        } else if (userScore > cpuScore) {
+            finalScore.textContent = "Yay! You win!";
+        }
+        results.appendChild(finalScore);
+        round.textContent = ("Rounds Played: " + currentRound);
+        const body = document.querySelector("body");
+        body.removeChild(btnRock);
+        body.removeChild(btnPaper);
+        body.removeChild(btnScissors);
+        const playAgain = document.createElement("form");
+        results.appendChild(playAgain);
+        const reset = document.createElement("button");
+        reset.textContent = "Play Again";
+        playAgain.appendChild(reset);
+    }
+}
