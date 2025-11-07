@@ -39,7 +39,7 @@ function getCpuChoice () {
 // 7. Create a Function called playRound (with two parameters: userChoice and cpuChoice) (it should encompass the following)
 function playRound() {
 //      - It should call getUserChoice and then getCpuChoice
-    getUserChoice();
+    // getUserChoice();
     getCpuChoice();
 // - If userChoice === cpuChoice, then print to console "It's a tie!"
 //     - Print a score message
@@ -132,3 +132,27 @@ function playGame() {
 }
 // 9. Run playGame
 // playGame();
+
+// UI additions below
+
+const btnRock = document.querySelector("#btnRock");
+const btnPaper = document.querySelector("#btnPaper");
+const btnScissors = document.querySelector("#btnScissors");
+
+btnRock.addEventListener("click", (e) => {
+    userChoice = e.target.innerText;
+    console.log("       You have chosen " + userChoice + "!");
+    playRound();
+})
+
+btnPaper.addEventListener("click", (e) => {
+    userChoice = e.target.innerText;
+    console.log("       You have chosen " + userChoice + "!");
+    playRound();
+})
+
+btnScissors.addEventListener("click", (e) => {
+    userChoice = e.target.innerText;
+    console.log("       You have chosen " + userChoice + "!");
+    playRound();
+})
