@@ -58,42 +58,36 @@ function playRound() {
         roundResult.style.backgroundColor = "green";
         roundResult.style.color = "white";
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        // return userScore;
     } else if (userChoice === "Rock" && cpuChoice === "Paper") {
         cpuScore++;
         roundResult.textContent = "You lose! Paper covers Rock!";
         roundResult.style.backgroundColor = "red";
         roundResult.style.color = "white";
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        // return cpuScore;
     } else if (userChoice === "Paper" && cpuChoice === "Rock") {
         userScore++;;
         roundResult.textContent = "You win! Paper Covers Rock!";
         roundResult.style.backgroundColor = "green";
         roundResult.style.color = "white";
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        // return userScore;
     } else if (userChoice === "Paper" && cpuChoice === "Scissors") {
         cpuScore++;
         roundResult.textContent = "You lose! Scissors cuts Paper!";
         roundResult.style.backgroundColor = "red";
         roundResult.style.color = "white";
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        // return cpuScore;
     } else if (userChoice === "Scissors" && cpuChoice === "Paper") {
         userScore++;;
         roundResult.textContent = "You win! Scissors cuts Paper!";
         roundResult.style.backgroundColor = "green";
         roundResult.style.color = "white";
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        // return userScore;
     } else if (userChoice === "Scissors" && cpuChoice === "Rock") {
         cpuScore++;
         roundResult.textContent = "You lose! Rock crushes Scissors!";
         roundResult.style.backgroundColor = "red";
         roundResult.style.color = "white";
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-        // return cpuScore;
     } else {
         console.log("   Who taught you how to type? Helen Keller?");
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
