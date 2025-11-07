@@ -13,11 +13,9 @@ const cpuChoicePara = document.createElement("p");
 const roundResult = document.createElement("span");
 const scoreText = document.createElement("h4");
 
-
 const btnRock = document.querySelector("#btnRock");
 const btnPaper = document.querySelector("#btnPaper");
 const btnScissors = document.querySelector("#btnScissors");
-
 
 function buttonPress(e) {
     userChoice = e.target.textContent;
