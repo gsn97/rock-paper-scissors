@@ -21,7 +21,7 @@ function buttonPress(e) {
     userChoice = e.target.textContent;
     userChoicePara.textContent = ("You have chosen " + userChoice + "!");
     playRound();
-    firstToFive();
+    firstToNum(5);
 }
 
 btnRock.addEventListener("click", buttonPress);
@@ -95,8 +95,10 @@ function playRound() {
     results.appendChild(roundResult);
     results.appendChild(scoreText);
 }
-function firstToFive() {    
-    if (userScore === 5 || cpuScore === 5) {
+function firstToNum(num) {
+    const gameEndScore = document.querySelector("#firstToBlank");
+    gameEndScore.textContent = ("First to " + num + " wins!");    
+    if (userScore === num || cpuScore === num) {
         const finalScore = document.createElement("p");
         finalScore.style.fontWeight = "bold";
         finalScore.style.fontStyle = "italic";
