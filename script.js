@@ -131,4 +131,4 @@ function playGame() {
     }
 }
 // 9. Run playGame
-playGame();
+// playGame();
