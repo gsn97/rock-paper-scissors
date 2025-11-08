@@ -3,6 +3,9 @@ let cpuChoice;
 let userScore = 0;
 let cpuScore = 0;
 let currentRound = 0;
+let winAmount;
+
+const body = document.querySelector("body");
 
 const round = document.querySelector("#round");
 
@@ -13,20 +16,35 @@ const cpuChoicePara = document.createElement("p");
 const roundResult = document.createElement("span");
 const scoreText = document.createElement("h4");
 
+const btnSubmit = document.querySelector("#btnSubmit");
 const btnRock = document.querySelector("#btnRock");
 const btnPaper = document.querySelector("#btnPaper");
 const btnScissors = document.querySelector("#btnScissors");
+
+btnSubmit.addEventListener("click", function(e) {
+    e.preventDefault();
+    const input = document.querySelector("#winAmount");
+    winAmount = +(input.value);
+    if (winAmount > 0) {
+        const winAmountPara = document.querySelector("#winAmountText");
+        winAmountPara.textContent = ("First to " + winAmount + " wins!");
+        winAmountPara.style.textDecoration = "underline";
+        body.removeChild(document.querySelector("form"));
+        btnRock.addEventListener("click", buttonPress);
+        btnPaper.addEventListener("click", buttonPress);
+        btnScissors.addEventListener("click", buttonPress);
+        return winAmount;
+    }
+})
 
 function buttonPress(e) {
     userChoice = e.target.textContent;
     userChoicePara.textContent = ("You have chosen " + userChoice + "!");
     playRound();
-    firstToNum(5);
+    firstToNum(winAmount);
 }
 
-btnRock.addEventListener("click", buttonPress);
-btnPaper.addEventListener("click", buttonPress);
-btnScissors.addEventListener("click", buttonPress);
+
 
 function getCpuChoice () {
     const randomChoice = Math.random();
@@ -95,10 +113,8 @@ function playRound() {
     results.appendChild(roundResult);
     results.appendChild(scoreText);
 }
-function firstToNum(num) {
-    const gameEndScore = document.querySelector("#firstToBlank");
-    gameEndScore.textContent = ("First to " + num + " wins!");    
-    if (userScore === num || cpuScore === num) {
+function firstToNum(winAmount) {
+    if (userScore === winAmount || cpuScore === winAmount) {
         const finalScore = document.createElement("p");
         finalScore.style.fontWeight = "bold";
         finalScore.style.fontStyle = "italic";
@@ -110,10 +126,10 @@ function firstToNum(num) {
         }
         results.appendChild(finalScore);
         round.textContent = ("Rounds Played: " + currentRound);
-        const body = document.querySelector("body");
         body.removeChild(btnRock);
         body.removeChild(btnPaper);
         body.removeChild(btnScissors);
+        body.removeChild(document.querySelector("br"));
         const playAgain = document.createElement("form");
         results.appendChild(playAgain);
         const reset = document.createElement("button");
