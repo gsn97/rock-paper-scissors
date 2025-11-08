@@ -123,9 +123,9 @@ function firstToNum(winAmount) {
         finalScore.style.fontStyle = "italic";
         finalScore.style.fontSize = "20px";
         if (userScore < cpuScore) {
-            finalScore.textContent = "You suck, computer wins!";
+            finalScore.textContent = "You stink worse than you look, computer wins!";
         } else if (userScore > cpuScore) {
-            finalScore.textContent = "Yay! You win!";
+            finalScore.textContent = "HOLY ****! You win!";
         }
         results.appendChild(finalScore);
         round.textContent = ("Rounds Played: " + currentRound);
