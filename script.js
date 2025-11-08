@@ -47,8 +47,6 @@ function buttonPress(e) {
     firstToNum(winAmount);
 }
 
-
-
 function getCpuChoice () {
     const randomChoice = Math.random();
     if (randomChoice < (1/3)) {
@@ -106,9 +104,6 @@ function playRound() {
         roundResult.textContent = "You lose! Rock crushes Scissors!";
         roundResult.style.backgroundColor = "red";
         roundResult.style.color = "white";
-        scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
-    } else {
-        console.log("   Who taught you how to type? Helen Keller?");
         scoreText.textContent = ("Score: " + "You: " + userScore + " || " + "Computer: " + cpuScore);
     }
     results.appendChild(userChoicePara);
