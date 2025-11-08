@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <style>
+        * {
+            justify-items: center;
+        }
+        body {
+            background-color: rgb(139, 199, 205);
+        }
+    </style>
 </head>
 <body>
     <h1>Rock, Paper, Scissors!</h1>
@@ -38,13 +46,17 @@
     </form>
     <div id="winAmountText"></div>
     <br>
-    <button id="btnRock">Rock</button>
-    <button id="btnPaper">Paper</button>
-    <button id="btnScissors">Scissors</button>
+    <div id="choiceButtons">       
+        <button id="btnRock">Rock</button>
+        <button id="btnPaper">Paper</button>
+        <button id="btnScissors">Scissors</button>
+    </div>
     <h3 id="round"></h3>
     <div id="results"></div>
     <br>
-    <a target="_blank" href="https://github.com/gsn97"><button>Check out my GitHub!</button></a>
+    <div id="gitHub">
+        <a target="_blank" href="https://github.com/gsn97"><button>Check out my GitHub!</button></a>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

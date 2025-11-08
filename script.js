@@ -17,7 +17,7 @@ const results = document.querySelector("#results");
 
 const userChoicePara = document.createElement("p");
 const cpuChoicePara = document.createElement("p");
-const roundResult = document.createElement("span");
+const roundResult = document.createElement("p");
 const scoreText = document.createElement("h4");
 
 const btnSubmit = document.querySelector("#btnSubmit");
@@ -124,9 +124,10 @@ function firstToNum(winAmount) {
         }
         results.appendChild(finalScore);
         round.textContent = ("Rounds Played: " + currentRound);
-        body.removeChild(btnRock);
-        body.removeChild(btnPaper);
-        body.removeChild(btnScissors);
+        const choiceButtons = document.querySelector("#choiceButtons");
+        choiceButtons.removeChild(btnRock);
+        choiceButtons.removeChild(btnPaper);
+        choiceButtons.removeChild(btnScissors);
         body.removeChild(document.querySelector("br"));
         const playAgain = document.createElement("form");
         results.appendChild(playAgain);
