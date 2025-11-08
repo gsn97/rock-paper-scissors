@@ -17,7 +17,7 @@ const results = document.querySelector("#results");
 
 const userChoicePara = document.createElement("p");
 const cpuChoicePara = document.createElement("p");
-const roundResult = document.createElement("p");
+const roundResult = document.createElement("span");
 const scoreText = document.createElement("h4");
 
 const btnSubmit = document.querySelector("#btnSubmit");
