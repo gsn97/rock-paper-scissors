@@ -9,6 +9,10 @@ const body = document.querySelector("body");
 
 const round = document.querySelector("#round");
 
+const winAmountPara = document.querySelector("#winAmountText");
+winAmountPara.textContent = "Tip: The buttons below won't work until you select a number! ...Except the GitHub one :)"
+winAmountPara.style.fontStyle = "italic";
+
 const results = document.querySelector("#results");
 
 const userChoicePara = document.createElement("p");
@@ -26,7 +30,6 @@ btnSubmit.addEventListener("click", function(e) {
     const input = document.querySelector("#winAmount");
     winAmount = +(input.value);
     if (winAmount > 0) {
-        const winAmountPara = document.querySelector("#winAmountText");
         winAmountPara.textContent = ("First to " + winAmount + " wins!");
         winAmountPara.style.textDecoration = "underline";
         body.removeChild(document.querySelector("form"));
