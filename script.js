@@ -5,6 +5,9 @@ let cpuScore = 0;
 let currentRound = 0;
 let winAmount;
 
+const page = document.querySelector("*");
+page.style.backgroundColor = "aquamarine";
+
 const body = document.querySelector("body");
 
 const round = document.querySelector("#round");
